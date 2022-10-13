@@ -1,27 +1,31 @@
 package cardGameUI;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.Random;
 
-public class CardsUI implements ActionListener{
+public class CardsUI implements ActionListener {
 
-  static   JFrame cardFrame;
-   static JPanel deckPanel;
-  static   JPanel playerCardPanel;
- static    JButton cardDeck;
- static    JButton playerCard;
+    static JFrame cardGameFrame;
+    static JPanel deckPanel;
+    static JPanel playerCardPanel;
+    static JButton cardDeck;
+    static JButton playerCardButton;
 
-    public void cardFrame()  {
+   ImageIcon[] cardImages;
 
-        cardFrame = new JFrame();
-        cardFrame.setSize(700, 500);
-        cardFrame.setVisible(true);
-        cardFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        cardFrame.getContentPane().setBackground(Color.DARK_GRAY);
+    public void cardGameFrame() {
+        cardGameFrame = new JFrame();
+        cardGameFrame.setSize(700, 500);
+        cardGameFrame.setVisible(true);
+        cardGameFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        cardGameFrame.getContentPane().setBackground(Color.DARK_GRAY);
+    }
 
+    public void deck() {
 
         Icon cardBackImg = new ImageIcon("C:\\Users\\dylan\\Documents\\GitHub\\CardGame\\cardImages\\cardDeck.png");
         cardDeck = new JButton(cardBackImg);
@@ -33,23 +37,41 @@ public class CardsUI implements ActionListener{
         deckPanel.setBackground(Color.darkGray);
         deckPanel.setPreferredSize(new Dimension(100, 200));
         deckPanel.add(cardDeck);
-        cardFrame.setLayout(new BorderLayout());
-        cardFrame.add(deckPanel, BorderLayout.NORTH);
-
-        playerCardPanel = new JPanel();
-        playerCard = new JButton();
-        playerCardPanel.setLayout(new GridLayout());
-
+        cardGameFrame.setLayout(new BorderLayout());
+        cardGameFrame.add(deckPanel, BorderLayout.NORTH);
     }
 
+    public void playerCards() {
+        playerCardPanel = new JPanel();
+        for (int i = 0; i < 5; i++) {
+            playerCardPanel.add(playerCardButton = new JButton());
+            playerCardButton.addActionListener(this);
+            playerCardButton.setPreferredSize(new Dimension(125, 175));
+        }
+        playerCardPanel.setLayout(new GridLayout(1, 5, 20, 20));
+        playerCardPanel.add(playerCardButton);
+        cardGameFrame.add(playerCardPanel, BorderLayout.SOUTH);
+
+  //    cardImages = new ImageIcon[] ("C:\\Users\\dylan\\Documents\\GitHub\\CardGame\\cardImages\\");
+        for (int i = 0; i < 52; i++) {
+            cardImages = new ImageIcon[i];
+
+        }
+
+        }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == cardDeck) {
+            playerCardButton.add(pla)
+            Random randomCard = new Random();
+            for (int i = 0; i < 52; i++) {
 
-            
+              int randomCardIndex = randomCard.nextInt();
+                Icon playerCardImg = new ImageIcon("C:\\Users\\dylan\\Documents\\GitHub\\CardGame\\cardImages");
 
-
+                playerCardButton = new JButton(playerCardImg);
+            }
         }
     }
 }

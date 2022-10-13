@@ -7,7 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
       CardsUI ui = new CardsUI();
-     ui.cardFrame();
+     ui.cardGameFrame();
+     ui.deck();
+     ui.playerCards();
 
 
     }
