@@ -1,4 +1,4 @@
-package cardGameUI;
+package UI;
 
 public class Players {
 

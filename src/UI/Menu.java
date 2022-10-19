@@ -1,4 +1,4 @@
-package cardGameUI;
+package UI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,5 +21,7 @@ public class Menu {
             buttonPanel.add(selectButtons);
 
         mainMenuFrame.add(buttonPanel, BorderLayout.SOUTH);
+
+
     }
 }

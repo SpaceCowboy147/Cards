@@ -1,7 +1,6 @@
 package CardGameMain;
 
-import cardGameUI.CardsUI;
-import cardGameUI.Menu;
+import UI.CardsUI;
 
 public class Main {
 
