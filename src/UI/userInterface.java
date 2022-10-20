@@ -10,13 +10,12 @@ import java.util.Objects;
 import java.util.Random;
 
 public class CardsUI implements ActionListener {
-    static JFrame cardGameFrame;
-    static JPanel deckPanel;
-    static JPanel playerCardPanel;
-    static JButton cardDeck;
-    static JButton playerCardButton;
-
-    static ImageIcon cardImage;
+     JFrame cardGameFrame;
+     JPanel deckPanel;
+     JPanel playerCardPanel;
+     JButton cardDeck;
+    JButton playerCardButton;
+     ImageIcon cardImage;
 
 
     public void cardGameFrame() {
@@ -49,7 +48,6 @@ public class CardsUI implements ActionListener {
         playerCardPanel = new JPanel();
         playerCardPanel.setLayout(new FlowLayout());
         cardGameFrame.add(playerCardPanel, BorderLayout.SOUTH);
-
     }
 
     @Override
@@ -62,8 +60,8 @@ public class CardsUI implements ActionListener {
                 Random randomCard = new Random();
                 int randomIndex = randomCard.nextInt(jpgCard.length);
                 String selectedCard = jpgCard[randomIndex];
-            Icon cardImg = new ImageIcon("cardImages\\" + selectedCard);
-                playerCardButton = new JButton(cardImg);
+             cardImage = new ImageIcon("cardImages\\" + selectedCard);
+                playerCardButton = new JButton(cardImage);
                playerCardPanel.add(playerCardButton);
 
                 System.out.println(selectedCard);
