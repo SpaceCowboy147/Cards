@@ -16,7 +16,7 @@ public class CardsUI implements ActionListener {
     static JButton cardDeck;
     static JButton playerCardButton;
 
-    static String cardImage;
+    static ImageIcon cardImage;
 
 
     public void cardGameFrame() {
@@ -29,7 +29,7 @@ public class CardsUI implements ActionListener {
 
 
     public void deck() {
-        Icon cardBackImg = new ImageIcon("C:\\Users\\dylan\\Documents\\GitHub\\CardGame\\cardImages\\cardDeck-125x175.png");
+        Icon cardBackImg = new ImageIcon("cardImages\\cardDeck-125x175.png");
         cardDeck = new JButton(cardBackImg);
         cardBackImg.getIconHeight();
         cardBackImg.getIconWidth();
@@ -47,13 +47,7 @@ public class CardsUI implements ActionListener {
 
     public void playerCards() {
         playerCardPanel = new JPanel();
-        //  for (int i = 0; i < 5; i++) {
-        //  playerCardPanel.add(playerCardButton = new JButton());
-//            playerCardButton.addActionListener(this);
-//            playerCardButton.setPreferredSize(new Dimension(125, 175));
-
         playerCardPanel.setLayout(new FlowLayout());
-//            playerCardPanel.add(playerCardButton);
         cardGameFrame.add(playerCardPanel, BorderLayout.SOUTH);
 
     }
@@ -61,22 +55,23 @@ public class CardsUI implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == cardDeck) {
-            File cardImagePath = new File("C:\\Users\\dylan\\Documents\\GitHub\\CardGame\\cardImages");
-            String[] content = cardImagePath.list();
-            System.out.println(content);
-            Random randomCard = new Random();
-            int randomIndex = randomCard.nextInt(content.length);
 
-            System.out.println(Arrays.toString(content));
 
-            System.out.println(randomIndex);
-            playerCardPanel.add(playerCardButton = new JButton(String.valueOf(randomIndex)));
-            playerCardButton.addActionListener(this);
-            playerCardButton.setPreferredSize(new Dimension(125, 175));
-            playerCardPanel.add(playerCardButton);
+            File cardImagePath = new File("cardImages");
+                String[] jpgCard = cardImagePath.list();
+                Random randomCard = new Random();
+                int randomIndex = randomCard.nextInt(jpgCard.length);
+                String selectedCard = jpgCard[randomIndex];
+            Icon cardImg = new ImageIcon("cardImages\\" + selectedCard);
+                playerCardButton = new JButton(cardImg);
+               playerCardPanel.add(playerCardButton);
+
+                System.out.println(selectedCard);
+                playerCardButton.addActionListener(this);
+                playerCardButton.setPreferredSize(new Dimension(125, 175));
+            }
         }
     }
-}
 
 
 
