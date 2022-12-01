@@ -1,14 +1,18 @@
 package CardGameMain;
 
-import UI.CardsUI;
+import UI.Menu;
+import UI.Test;
 
 public class Main {
 
     public static void main(String[] args) {
-      CardsUI ui = new CardsUI();
-     ui.cardGameFrame();
-     ui.deck();
-     ui.playerCards();
+        Menu mainMenu = new Menu();
+        mainMenu.frame();
+        mainMenu.buttons();
+//      Test ui = new Test();
+//        ui.cardGameFrame();
+//        ui.deck();
+//        ui.playerCardsPanel();
 
 
     }
