@@ -1,10 +1,10 @@
 package CardGameMain;
 
-import mainMenuUI.MenuButtons;
+import MainMenu.MenuButtons;
 
-import static mainMenuUI.GuiFrame.cardGameFrame;
+import static MainMenu.GuiFrame.cardGameFrame;
 
-import static mainMenuUI.menuPanel.menuPanel;
+import static MainMenu.menuPanel.menuPanel;
 
 public class Main {
 

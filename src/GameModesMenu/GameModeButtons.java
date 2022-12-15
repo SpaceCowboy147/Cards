@@ -1,6 +1,6 @@
-package mainMenuUI;
+package GameModesMenu;
 
-import GameModes.War.PlayerCardPanel;
+import GameModes.War.PlayerCards;
 import GameModes.War.mainDeck;
 
 import javax.swing.*;
@@ -8,27 +8,26 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 import static GameModes.War.PlayerCardPanel.playerCardsPanel;
-import static mainMenuUI.GuiFrame.cardGameFrame;
-import static mainMenuUI.GuiFrame.guiFrame;
-import static mainMenuUI.menuPanel.buttonName;
-import static mainMenuUI.menuPanel.buttonPanel;
+import static GameModesMenu.gameMenuPanels.buttonName;
+import static GameModesMenu.gameMenuPanels.buttonPanel;
+import static MainMenu.GuiFrame.cardGameFrame;
+import static MainMenu.GuiFrame.guiFrame;
 
-public class MenuButtons implements ActionListener {
-    static String[] buttonsNames;
-   static JButton button;
+public class GameModeButtons implements ActionListener {
+    static String[] gameButtonsNames;
+    static JButton gameButton;
 
-   public void buttons() {
+    public void buttons() {
         buttonPanel = new JPanel();
         buttonPanel.setLayout(new GridBagLayout());
 
 
-        buttonsNames = new String[]{"Game modes", "Options", "End Game"};
-        for (String s : buttonsNames) {
-            buttonPanel.add(button = new JButton(s));
-            button.addActionListener(this);
-            button.setPreferredSize(new Dimension(150, 100));
+        gameButtonsNames = new String[]{"War", "Poker"};
+        for (String s : gameButtonsNames) {
+            buttonPanel.add(gameButton = new JButton(s));
+            gameButton.addActionListener(this);
+            gameButton.setPreferredSize(new Dimension(150, 100));
         }
         buttonPanel.setBackground(Color.darkGray);
         buttonPanel.setPreferredSize(new Dimension(500, 500));
@@ -42,32 +41,21 @@ public class MenuButtons implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         buttonName = ((JButton) e.getSource()).getText();
         switch (buttonName) {
-            case "Game modes":
+            case "War":
                 guiFrame.getContentPane().removeAll();
-
                 mainDeck mainDeck = new mainDeck();
                 mainDeck.deck();
                 cardGameFrame();
                 playerCardsPanel();
+                PlayerCards playerCards = new PlayerCards();
+                playerCards.warGameCardDeck();
                 guiFrame.revalidate();
-                guiFrame.repaint();
-                guiFrame.repaint();
-              //  guiFrame.setVisible(true);
-
-
-
-
                 guiFrame.repaint();
                 guiFrame.setVisible(true);
 
-                break;
-            case "Options":
 
                 break;
-            case "End Game":
-
-                break;
+            case "Poker":
         }
     }
 }
-

@@ -1,4 +1,4 @@
-package mainMenuUI;
+package MainMenu;
 
 import javax.swing.*;
 import java.awt.*;

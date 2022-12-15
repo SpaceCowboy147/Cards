@@ -1,13 +1,13 @@
-package mainMenuUI;
+package GameModesMenu;
 
 import javax.swing.*;
 import java.awt.*;
 
-import static mainMenuUI.GuiFrame.guiFrame;
+import static MainMenu.GuiFrame.guiFrame;
 
-public class menuPanel {
+public class gameMenuPanels {
     static JPanel buttonPanel;
-   static String buttonName;
+    static String buttonName;
 
     public static void menuPanel() {
         JPanel menuTitlePanel = new JPanel();

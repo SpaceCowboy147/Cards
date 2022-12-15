@@ -3,7 +3,7 @@ package GameModes.War;
 import javax.swing.*;
 import java.awt.*;
 
-import static mainMenuUI.GuiFrame.guiFrame;
+import static MainMenu.GuiFrame.guiFrame;
 
 public class PlayerCardPanel {
     static JPanel playerCardPanel;
