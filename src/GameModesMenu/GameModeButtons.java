@@ -1,7 +1,7 @@
 package GameModesMenu;
 
-import GameModes.War.PlayerCards;
-import GameModes.War.mainDeck;
+
+import GameModes.War.warGame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,12 +43,11 @@ public class GameModeButtons implements ActionListener {
         switch (buttonName) {
             case "War":
                 guiFrame.getContentPane().removeAll();
-                mainDeck mainDeck = new mainDeck();
-                mainDeck.deck();
+                warGame warGame = new warGame();
+                warGame.deck();
                 cardGameFrame();
                 playerCardsPanel();
-                PlayerCards playerCards = new PlayerCards();
-                playerCards.warGameCardDeck();
+                warGame playerCards = new warGame();
                 guiFrame.revalidate();
                 guiFrame.repaint();
                 guiFrame.setVisible(true);
