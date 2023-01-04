@@ -18,9 +18,10 @@ public class PlayerCardPanel {
 
     static public void playerSelectedCardPanel() {
        playerSelectedCardPanel = new JPanel();
-        playerCardPanel.setLayout(new GridLayout(2, 1));
+        playerSelectedCardPanel.setLayout(new GridLayout(2, 1));
         guiFrame.add(playerSelectedCardPanel, BorderLayout.CENTER);
-        playerCardPanel.setBackground(Color.darkGray);
+        playerSelectedCardPanel.setBackground(Color.darkGray);
+
 
     }
 }

@@ -9,6 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import static GameModes.War.PlayerCardPanel.playerCardsPanel;
+import static GameModes.War.PlayerCardPanel.playerSelectedCardPanel;
 import static GameModesMenu.gameMenuPanels.buttonName;
 import static GameModesMenu.gameMenuPanels.buttonPanel;
 import static MainMenu.GuiFrame.cardGameFrame;
@@ -47,6 +48,7 @@ public class GameModeButtons implements ActionListener {
                 warGame.deck();
                 cardGameFrame();
                 playerCardsPanel();
+                playerSelectedCardPanel();
                 warGame playerCards = new warGame();
                 guiFrame.revalidate();
                 guiFrame.repaint();
