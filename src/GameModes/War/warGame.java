@@ -30,8 +30,8 @@ public class warGame implements ActionListener {
     int aiCardValue;
     int playerCardValue;
     int playerScore;
-
-
+    int aiScore;
+    int turns;
 
     public void deck() {
         Icon cardBackImg = new ImageIcon("cardImages\\cardDeck-125x175.png");
@@ -116,8 +116,8 @@ public class warGame implements ActionListener {
             guiFrame.setVisible(true);
 
             assert selectedCard != null;
-            // int playerCardValue = 0;
-            if (selectedCard.contains("2_of")) { //|| selectedAICard.contains("2_of")) {
+
+            if (selectedCard.contains("2_of")) {
                 playerCardValue = 2;
             } else if (selectedCard.contains("3_of")) {
                 playerCardValue = 3;
@@ -146,7 +146,7 @@ public class warGame implements ActionListener {
 
             }
 
-            //   int aiCardValue = 0;
+
             assert selectedAICard != null;
             if (selectedAICard.contains("2_of")) { //|| selectedAICard.contains("2_of")) {
                 aiCardValue = 2;
@@ -176,18 +176,38 @@ public class warGame implements ActionListener {
                 aiCardValue = 13;
             }
 
-            System.out.println("ai card" + " " + aiCardValue + "  " + "player card" + " " + playerCardValue);
+           // System.out.println("\n" + "ai card value:" + " " + aiCardValue + " \n " + "player card" + " " + playerCardValue);
         }
-     
-        int aiScore;
-            if (playerCardValue > aiCardValue ) {
-               // for (int i = playerScore; i <= playerScore; i++) {
-                    playerScore++;
-                }
-                System.out.println(playerScore);
-            }
 
-            }
+        if (playerCardValue > aiCardValue) {
+            playerScore++;
+        } else if (playerCardValue < aiCardValue) {
+            aiScore++;
+        }
+        if (playerCardValue == aiCardValue) {
+
+        }
+        System.out.println("ai score " + " " + aiScore + " \n" + "player score: " + playerScore);
+
+
+        for (int turns = 0; turns <= 27; turns++ ) {
+
+        }
+        turns++;
+        System.out.println(turns);
+        if (turns == 27 && playerScore < aiScore) {
+            System.out.println("You lost ya loser");
+        }
+        if (turns == 27 && playerScore > aiScore) {
+            System.out.println("You beat a program. Congratulations!");
+
+        }
+        if (turns == 27 && playerScore == aiScore) {
+            System.out.println("Draw! Guess we have to do a high noon showdown");
+        }
+    }
+}
+
 
 
 

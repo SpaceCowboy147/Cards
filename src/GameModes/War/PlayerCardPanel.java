@@ -16,7 +16,7 @@ public class PlayerCardPanel {
         guiFrame.add(playerCardPanel, BorderLayout.SOUTH);
         playerCardPanel.setBackground(Color.darkGray);
 
-        playerScore = new JLabel("test score");
+        playerScore = new JLabel((Icon) playerScore);
         playerScore.setLayout(new BorderLayout());
        guiFrame.add(playerScore, BorderLayout.EAST);
 
