@@ -8,12 +8,18 @@ import static MainMenu.GuiFrame.guiFrame;
 public class PlayerCardPanel {
     static JPanel playerCardPanel;
     static JPanel playerSelectedCardPanel;
+    static JLabel playerScore;
 
     static public void playerCardsPanel() {
         playerCardPanel = new JPanel();
         playerCardPanel.setLayout(new FlowLayout());
         guiFrame.add(playerCardPanel, BorderLayout.SOUTH);
         playerCardPanel.setBackground(Color.darkGray);
+
+        playerScore = new JLabel("test score");
+        playerScore.setLayout(new BorderLayout());
+       guiFrame.add(playerScore, BorderLayout.EAST);
+
     }
 
     static public void playerSelectedCardPanel() {

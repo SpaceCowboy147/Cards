@@ -20,12 +20,18 @@ public class warGame implements ActionListener {
     JButton cardDeck;
     JButton playerCardButton;
     JPanel deckPanel;
-    JLabel playerSelectedCard;
+    static JLabel playerSelectedCard;
     String[] jpgCardImagePath;
     ImageIcon cardImage;
-    List<String> deckOfCards = new ArrayList<>();
+    static List<String> deckOfCards = new ArrayList<>();
+
     ArrayList<String> playerCards = new ArrayList<>();
     Random randomCard = new Random();
+    int aiCardValue;
+    int playerCardValue;
+    int playerScore;
+
+
 
     public void deck() {
         Icon cardBackImg = new ImageIcon("cardImages\\cardDeck-125x175.png");
@@ -47,6 +53,7 @@ public class warGame implements ActionListener {
         deckOfCards.remove("black_joker-125x175.png");
         deckOfCards.remove("red_joker-125x175.png");
         cardDeck.addActionListener(this);
+
 
     }
 
@@ -77,7 +84,6 @@ public class warGame implements ActionListener {
 
         //PLAYER CARD FUNCTIONALITY
         if (e.getSource() == playerCardButton) {
-
             String selectedCard = null;
             playerSelectedCardPanel();
             for (int i = playerCards.size(); i > 0; i--) {
@@ -91,32 +97,109 @@ public class warGame implements ActionListener {
             playerSelectedCardPanel.remove(playerSelectedCard);
             playerSelectedCardPanel.add(playerSelectedCard);
             guiFrame.setVisible(true);
+            //    System.out.println(selectedCard);
+            //  System.out.println(playerCards.size());
 
-            System.out.println(selectedCard);
-            System.out.println(playerCards.size());
 
-
-            //AI SELECTCARD
-         //   String selectedAICard = null;
-
+            //AI SELECT CARD
+            String selectedAICard = null;
             for (int i = deckOfCards.size(); i > 0; i--) {
-                    int randomIndex = randomCard.nextInt(deckOfCards.size());
-                    selectedCard = deckOfCards.get(randomIndex);
-                }
-            
-
-            deckOfCards.remove(selectedCard);
-            cardImage = new ImageIcon("cardImages\\" + selectedCard);
+                int randomIndex = randomCard.nextInt(deckOfCards.size());
+                selectedAICard = deckOfCards.get(randomIndex);
+            }
+            deckOfCards.remove(selectedAICard);
+            cardImage = new ImageIcon("cardImages\\" + selectedAICard);
             playerSelectedCard = new JLabel(cardImage);
             playerSelectedCard.setPreferredSize(new Dimension(125, 175));
             playerSelectedCardPanel.remove(playerSelectedCard);
             playerSelectedCardPanel.add(playerSelectedCard);
             guiFrame.setVisible(true);
 
-        }
+            assert selectedCard != null;
+            // int playerCardValue = 0;
+            if (selectedCard.contains("2_of")) { //|| selectedAICard.contains("2_of")) {
+                playerCardValue = 2;
+            } else if (selectedCard.contains("3_of")) {
+                playerCardValue = 3;
+            } else if (selectedCard.contains("4_of")) {
+                playerCardValue = 4;
+            } else if (selectedCard.contains("5_of")) {
+                playerCardValue = 5;
+            } else if (selectedCard.contains("6_of")) {
+                playerCardValue = 6;
+            } else if (selectedCard.contains("7_of")) {
+                playerCardValue = 7;
+            } else if (selectedCard.contains("8_of")) {
+                playerCardValue = 8;
+            } else if (selectedCard.contains("9_of")) {
+                playerCardValue = 9;
+            } else if (selectedCard.contains("10_of")) {
+                playerCardValue = 10;
+            } else if (selectedCard.contains("jack_of")) {
+                playerCardValue = 11;
+            } else if (selectedCard.contains("king_of")) {
+                playerCardValue = 12;
+            } else if (selectedCard.contains("queen_of")) {
+                playerCardValue = 12;
+            } else if (selectedCard.contains("ace_of")) {
+                playerCardValue = 13;
 
-    }
-}
+            }
+
+            //   int aiCardValue = 0;
+            assert selectedAICard != null;
+            if (selectedAICard.contains("2_of")) { //|| selectedAICard.contains("2_of")) {
+                aiCardValue = 2;
+            } else if (selectedAICard.contains("3_of")) {
+                aiCardValue = 3;
+            } else if (selectedAICard.contains("4_of")) {
+                aiCardValue = 4;
+            } else if (selectedAICard.contains("5_of")) {
+                aiCardValue = 5;
+            } else if (selectedAICard.contains("6_of")) {
+                aiCardValue = 6;
+            } else if (selectedAICard.contains("7_of")) {
+                aiCardValue = 7;
+            } else if (selectedAICard.contains("8_of")) {
+                aiCardValue = 8;
+            } else if (selectedAICard.contains("9_of")) {
+                aiCardValue = 9;
+            } else if (selectedAICard.contains("10_of")) {
+                aiCardValue = 10;
+            } else if (selectedAICard.contains("jack_of")) {
+                aiCardValue = 11;
+            } else if (selectedAICard.contains("king_of")) {
+                aiCardValue = 12;
+            } else if (selectedAICard.contains("queen_of")) {
+                aiCardValue = 12;
+            } else if (selectedAICard.contains("ace_of")) {
+                aiCardValue = 13;
+            }
+
+            System.out.println("ai card" + " " + aiCardValue + "  " + "player card" + " " + playerCardValue);
+        }
+     
+        int aiScore;
+            if (playerCardValue > aiCardValue ) {
+               // for (int i = playerScore; i <= playerScore; i++) {
+                    playerScore++;
+                }
+                System.out.println(playerScore);
+            }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
